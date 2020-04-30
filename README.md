@@ -4,13 +4,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Clone the repo
 
-`git clone hhttps://github.com/jorgedev2789/webcocktail.git<br/>cd webcocktail`
+`git clone hhttps://github.com/jorgedev2789/webcocktail.git\cd webcocktail`
 
 # Install npm packages
 
 Install the npm packages described in the package.json and verify that it works:
 
-`npm install <br>npm start`
+`npm install\npm start`
 
 ## Development server
 
