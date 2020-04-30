@@ -8,25 +8,38 @@ import { DrinksService } from '../services/drinks.service';
 })
 export class DetailComponent implements OnInit {
 
-
   drinkDetail = {
-    idDrink: ''
-  };
+    strDrink: String,
+    strDrinkThumb: String,
+    strInstructions: String,
+    strIngredient1: String,
+    strIngredient2: String,
+    strIngredient3: String
+  }
 
-  constructor(private drinks: DrinksService) { }
+  constructor(private drinks: DrinksService) {}
 
   ngOnInit(): void {
-    
+  
   }
 
   showDrink(id: number)
   {
     if(id > 0){
       this.drinks.getDrink(id).subscribe((res: any) => {
-        ({idDrink : this.drinkDetail.idDrink } = res.drinks)
-
-        console.log(res)
+        this.drinkDetail = res.drinks[0]
       })
+    }
+  }
+
+  closeDrink(){
+    this.drinkDetail = {
+      strDrink: String,
+      strDrinkThumb: String,
+      strInstructions: String,
+      strIngredient1: String,
+      strIngredient2: String,
+      strIngredient3: String
     }
   }
 
