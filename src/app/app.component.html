@@ -1,22 +1,19 @@
-<section class="page-section">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-
-    <div class="row">
-      <div class="col-md-12 mt-5">
-        <div class="jumbotron">
-          <h1 class="display-4">Hello, welcome!</h1>
-          <p class="lead">
-            Buy all kinds of liqueurs online: pisco, preparations, rum, creams, tequila, vodka, whiskey at the best
-            price. <br>
-            Only in the Cocktail online store.</p>
-          <hr class="my-4">
-          <div><img src="https://blog.rappi.com/wp-content/uploads/2017/02/Banner_SV_Cocteles.png" class="img-fluid rounded-sm" alt=""></div>
-
-        </div>
-
+    <a class="navbar-brand" routerLink=""><img src="https://www.thecocktaildb.com/images/logo.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link active" routerLink="">Home <span
+            class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" routerLink="drinks">Drinks</a>
 
       </div>
     </div>
-
   </div>
-</section>
+</nav>
+
+<router-outlet></router-outlet>

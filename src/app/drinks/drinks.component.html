@@ -1,0 +1,64 @@
+<section>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 mt-5">
+				<div class="card">
+					<h5 class="card-header form-row align-items-center">
+						<div class="col-auto">
+							<select name="cbCat" (change) = "searchDrinks($event.target)" class="custom-select mr-sm-6" id="">
+								<option value="">Categories</option>
+								<option *ngFor="let category of categoriesData" value="{{ category.strCategory }}">
+									{{ category.strCategory }}</option>
+							</select>
+						</div>
+						<div class="col-auto">
+							<select name="cbGla" (change) = "searchDrinks($event.target)" class="custom-select mr-sm-4" id="">
+								<option value="">Glasses</option>
+								<option *ngFor="let glasses of glassesData" value="{{ glasses.strGlass }}">
+									{{ glasses.strGlass }}</option>
+							</select>
+						</div>
+						<div class="col-auto">
+							<select name="cbIng" (change) = "searchDrinks($event.target)" class="custom-select mr-sm-4" id="">
+								<option value="">Ingredients</option>
+								<option *ngFor="let ingredients of ingredientsData"
+									value="{{ ingredients.strIngredient1 }}">{{ ingredients.strIngredient1 }}</option>
+							</select>
+						</div>
+						<div class="col-auto">
+							<select name="cbAlc" (change) = "searchDrinks($event.target)" class="custom-select mr-sm-4" id="">
+								<option value="">Alcoholic</option>
+								<option *ngFor="let alcoholic of alcoholicData" value="{{ alcoholic.strAlcoholic }}">
+									{{ alcoholic.strAlcoholic }}</option>
+							</select>
+						</div>
+					</h5>
+					<div class="card-body">
+						<div class="row">
+							<div class="col-sm-3 mt-2" *ngFor="let drink of drinksData">
+								<div class="card">
+									<div class="card-body">
+										<h5 class="card-title">{{ (drink.strDrink.length>15)? (drink.strDrink | slice:0:15)+'..':(drink.strDrink) }}</h5>
+										<p class="card-text"><img src="{{ drink.strDrinkThumb }}/preview" height="150" alt=""></p>
+										<a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-primary" (click)="detail.showDrink(drink.idDrink)">View more</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="text-center" *ngIf="!drinksData || drinksData.length === 0">
+								<p class="mt-2">Choose a filter to show drinks</p>
+							</div>
+
+						
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<app-detail #detail></app-detail>
